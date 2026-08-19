@@ -80,88 +80,55 @@ This project demonstrates a safer approach where AI is used for reasoning and au
 
 ```text
 
-                     Customer
-
-                        |
-
-                        v
-
-                React + Vite UI
-
-                        |
-
-                        | POST /api/tickets
-
-                        v
-
-                  Express API
-
-                        |
-
-                        v
-
-              Ticket Processing Workflow
-
-                        |
-
-              +---------+---------+
-
-              |                   |
-
-              v                   v
-
-        Gemini Provider       Demo Provider
-
-              |
-
-              v
-
-      Structured Classification
-
-              |
-
-              v
-
-       Gemini Tool Calling
-
-              |
-
-       +------+------+------+
-
-       |             |      |
-
-       v             v      v
-
- Shipment Details  Events  Policy Search
-
-       |             |      |
-
-       +------+------+------+
-
-              |
-
-              v
-
-        AI Diagnosis
-
-              |
-
-              v
-
-      Backend Safety Gate
-
-              |
-
-        +-----+------+
-
-        |            |
-
-        v            v
-
- AUTO_RESOLVED    ESCALATED
-
-                     |
-
-                     v
+                                            CUSTOMER
+                            |
+                            v
+                    React + Vite UI
+                            |
+                            | POST /api/tickets
+                            v
+                     EXPRESS API
+                            |
+                            v
+                TICKET PROCESSING WORKFLOW
+                            |
+                    +-------+-------+
+                    |               |
+                    v               v
+             GEMINI PROVIDER   DEMO PROVIDER
+                    |
+                    v
+          STRUCTURED CLASSIFICATION
+                    |
+                    v
+             TOOL-CALLING LOOP
+                    |
+          +---------+---------+---------+
+          |                   |         |
+          v                   v         v
+   Shipment Details      Shipment     Policy
+       Tool              Events Tool  Search Tool
+          |                   |         |
+          +---------+---------+---------+
+                    |
+                    v
+              AI DIAGNOSIS
+          (evidence + confidence)
+                    |
+                    v
+          BACKEND SAFETY GATE
+          confidence >= 0.80
+          shipment exists
+          tools succeeded
+          no escalation rule
+                    |
+              +-----+------+
+              |            |
+              v            v
+       AUTO_RESOLVED    ESCALATED
+              |            |
+              v            v
+       Customer Reply   Human Agent
+                           Review
 
               Human Agent Review
