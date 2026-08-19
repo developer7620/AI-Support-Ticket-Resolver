@@ -80,7 +80,7 @@ This project demonstrates a safer approach where AI is used for reasoning and au
 
 ```text
 
-                                            CUSTOMER
+                         CUSTOMER
                             |
                             v
                     React + Vite UI
